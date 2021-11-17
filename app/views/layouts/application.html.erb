@@ -11,6 +11,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <%= link_to 'Loja', root_path, class: 'navbar-brand' %>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <%= link_to 'Cadastrar Produto', produtos_new_path, class:'nav-link active' %>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <%= yield %>
+    </div>
   </body>
 </html>
