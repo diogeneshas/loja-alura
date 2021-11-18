@@ -21,6 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
                 <%= link_to 'Cadastrar Produto', new_produto_path, class:'nav-link active' %>
+                <%= link_to 'Departamentos', departamentos_path, class:'nav-link' %>
               </div>
                   <%= form_tag busca_produto_path, method: :get, class: 'navbar-form navbar-right' do %>
                     <div class="form-group">
