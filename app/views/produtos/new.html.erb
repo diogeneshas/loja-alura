@@ -1,6 +1,10 @@
+            <% @produto.errors.full_messages.each do |msg| %>
+                <div class="alert alert-danger" role="alert">
+                    <%= msg %>
+                </div>
+            <% end %>
  
-        <body>
-            <%= form_for Produto.new do |f| %>
+            <%= form_for @produto do |f| %>
                 <div class="row">
                     <div class="col-sm-8">
                         <div class="form-group">
@@ -39,4 +43,3 @@
 
                 <%= f.submit 'Criar', class: 'btn btn-primary mt-4'%>
             <% end %>
-        </body>
