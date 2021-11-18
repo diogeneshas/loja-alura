@@ -5,9 +5,13 @@ class ProdutosController < ApplicationController
     end
 
     def create
-       produto = params.require(:produto).permit(:nome, :descricao, :preco, :quantidade)
-       Produto.create produto
-       redirect_to root_path
+       valores = params.require(:produto).permit(:nome, :descricao, :preco, :quantidade)
+			 produto = Produto.new valores
+       if produto.save
+       	redirect_to root_url
+			 else
+				render :new
+			 end
     end
 
     def destroy
@@ -18,6 +22,6 @@ class ProdutosController < ApplicationController
 
     def busca
         @nome = params[:nome]
-        @produtos = Produto.where "nome like ?", "%#{@nome}%"
+        @produtos = Produto.where 'nome like ?', "%#{@nome}%"
     end
 end
